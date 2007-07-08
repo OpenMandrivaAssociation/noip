@@ -5,7 +5,7 @@ Release:	%mkrel 1
 License:	GPL
 Group:		Networking/Other
 URL:		http://www.no-ip.com
-Source0:	http://www.no-ip.com/client/linux/%{name}-duc-linux.tar.gz
+Source0:	http://www.no-ip.com/client/linux/%{name}-duc-linux.tar.bz2
 Source1:	%{name}-initscript
 Patch0:		%{name}-makefile.patch
 Patch1:		%{name}-config-path.patch
@@ -25,7 +25,7 @@ NOTE: You must add hostnames on the website (http://www.no-ip.com)
 first before you can have the updater update them.
 
 %prep
-%setup -q %{name}-%{version}
+%setup -q
 %patch0 -p0
 %patch1 -p0
 mv -f %{name}2.c %{name}.c

@@ -1,16 +1,16 @@
 Summary:	Linux client for the no-ip.com dynamic DNS service
 Name:		noip
-Version:	2.1.3
-Release:	%mkrel 4
+Version:	2.1.4
+Release:	%mkrel 1
 License:	GPL
 Group:		Networking/Other
+URL:		http://www.no-ip.com
 Source0:	http://www.no-ip.com/client/linux/%{name}-duc-linux.tar.gz
 Source1:	%{name}-initscript
 Patch0:		%{name}-makefile.patch
 Patch1:		%{name}-config-path.patch
-URL:		http://www.no-ip.com/
 Requires(pre):	rpm-helper
-Requires(post): rpm-helper
+Requires(post):	rpm-helper
 BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 
 %description
@@ -72,5 +72,3 @@ echo
 %attr(755,root,root) %{_sbindir}/*
 %attr(744,root,root) %{_initrddir}/%{name}
 %ghost %{_sysconfdir}/%{name}.conf
-
-

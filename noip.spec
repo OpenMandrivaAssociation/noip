@@ -1,11 +1,11 @@
 Summary:	Linux client for the no-ip.com dynamic DNS service
 Name:		noip
-Version:	2.1.4
+Version:	2.1.7
 Release:	%mkrel 1
 License:	GPL
 Group:		Networking/Other
 URL:		http://www.no-ip.com
-Source0:	http://www.no-ip.com/client/linux/%{name}-duc-linux.tar.bz2
+Source0:	http://www.no-ip.com/client/linux/%{name}-%{version}.tar.bz2
 Source1:	%{name}-initscript
 Patch0:		%{name}-makefile.patch
 Patch1:		%{name}-config-path.patch

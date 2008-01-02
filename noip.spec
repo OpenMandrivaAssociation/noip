@@ -11,6 +11,7 @@ Patch0:		%{name}-makefile.patch
 Patch1:		%{name}-config-path.patch
 Requires(pre):	rpm-helper
 Requires(post):	rpm-helper
+BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 
 %description
 This is the No-IP.com Dynamic DNS update client page.

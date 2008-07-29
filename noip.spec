@@ -1,7 +1,7 @@
 Summary:	Linux client for the no-ip.com dynamic DNS service
 Name:		noip
 Version:	2.1.7
-Release:	%mkrel 1
+Release:	%mkrel 3
 License:	GPL
 Group:		Networking/Other
 URL:		http://www.no-ip.com

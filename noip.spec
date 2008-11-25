@@ -1,14 +1,14 @@
 Summary:	Linux client for the no-ip.com dynamic DNS service
 Name:		noip
-Version:	2.1.7
-Release:	%mkrel 4
-License:	GPL
+Version:	2.1.9
+Release:	%mkrel 1
+License:	GPLv2+
 Group:		Networking/Other
 URL:		http://www.no-ip.com
 Source0:	http://www.no-ip.com/client/linux/%{name}-%{version}.tar.bz2
 Source1:	%{name}-initscript
-Patch0:		%{name}-makefile.patch
-Patch1:		%{name}-config-path.patch
+Patch0:		%{name}-2.1.9-makefile.patch
+Patch1:		%{name}-2.1.9-config-path.patch
 Requires(pre):	rpm-helper
 Requires(post):	rpm-helper
 BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
@@ -26,19 +26,18 @@ first before you can have the updater update them.
 
 %prep
 %setup -q
-%patch0 -p0
-%patch1 -p0
+%patch0 -p1
+%patch1 -p1
 mv -f %{name}2.c %{name}.c
 
 %build
-perl -pi -e "s/CCFLAGS=.*/CCFLAGS=%{optflags}/" Makefile
 
-%make 
+%make PREFIX="%{_prefix}" BINDIR="%{_sbindir}" CONFDIR="%{_sysconfdir}" CFLAGS="%{optflags}"
 
 %install
 [ "%{buildroot}" != "/" ] && rm -rf %{buildroot}
 
-%makeinstall_std 
+%makeinstall_std PREFIX=%{_prefix} CONFDIR="%{_sysconfdir}" BINDIR="%{_sbindir}"
 
 touch %{buildroot}%{_sysconfdir}/%{name}.conf
 mkdir -p %{buildroot}%{_initrddir}

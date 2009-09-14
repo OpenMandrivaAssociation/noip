@@ -31,6 +31,7 @@ first before you can have the updater update them.
 mv -f %{name}2.c %{name}.c
 
 %build
+%define Werror_cflags %{nil}
 
 %make PREFIX="%{_prefix}" BINDIR="%{_sbindir}" CONFDIR="%{_sysconfdir}" CFLAGS="%{optflags}"
 

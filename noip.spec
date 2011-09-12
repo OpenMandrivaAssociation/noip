@@ -32,8 +32,11 @@ mv -f %{name}2.c %{name}.c
 
 %build
 %define Werror_cflags %{nil}
+%serverbuild
+export CFLAGS="%{optflags}"
+export LDFLAGS="%{ldflags}"
 
-%make PREFIX="%{_prefix}" BINDIR="%{_sbindir}" CONFDIR="%{_sysconfdir}" CFLAGS="%{optflags}"
+%make PREFIX="%{_prefix}" BINDIR="%{_sbindir}" CONFDIR="%{_sysconfdir}"
 
 %install
 [ "%{buildroot}" != "/" ] && rm -rf %{buildroot}

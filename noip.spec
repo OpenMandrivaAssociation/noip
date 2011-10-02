@@ -1,7 +1,7 @@
 Summary:	Linux client for the no-ip.com dynamic DNS service
 Name:		noip
 Version:	2.1.9
-Release:	%mkrel 4
+Release:	%mkrel 5
 License:	GPLv2+
 Group:		Networking/Other
 URL:		http://www.no-ip.com
@@ -32,8 +32,12 @@ mv -f %{name}2.c %{name}.c
 
 %build
 %define Werror_cflags %{nil}
+%if %mdvver >= 201200
+%serverbuild_hardened
+%else
 %serverbuild
-export CFLAGS="%{optflags}"
+%endif
+
 export LDFLAGS="%{ldflags}"
 
 %make PREFIX="%{_prefix}" BINDIR="%{_sbindir}" CONFDIR="%{_sysconfdir}"

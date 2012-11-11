@@ -1,0 +1,39 @@
+diff -Naur noip-2.1.9/Makefile noip-2.1.9.tpg/Makefile
+--- noip-2.1.9/Makefile	2008-11-21 22:27:15.000000000 +0000
++++ noip-2.1.9.tpg/Makefile	2008-11-25 22:01:23.000000000 +0000
+@@ -1,10 +1,12 @@
+-TGT=noip2
++TGT=noip
+ CC=gcc
+ PKG=noip-2.1.tgz
+ 
+-PREFIX=/usr/local
+-CONFDIR=${PREFIX}/etc
+-BINDIR=${PREFIX}/bin
++PREFIX?=/usr/local
++CONFDIR?=${PREFIX}/etc
++BINDIR?=${PREFIX}/bin
++CFLAGS?=-Wall -g
++DESTDIR?=
+ 
+ # these defines are for Linux
+ LIBS=
+@@ -22,14 +24,12 @@
+ # ARCH=sun
+ 
+ ${TGT}: Makefile ${TGT}.c 
+-	${CC} -Wall -g -D${ARCH} -DPREFIX=\"${PREFIX}\" ${TGT}.c -o ${TGT} ${LIBS}
++	${CC} ${CFLAGS} -D${ARCH} -DPREFIX=\"${PREFIX}\" ${TGT}.c -o ${TGT} ${LIBS} ${LDFLAGS}
+ 
+ install: ${TGT} 
+-	if [ ! -d ${BINDIR} ]; then mkdir -p ${BINDIR};fi
+-	if [ ! -d ${CONFDIR} ]; then mkdir -p ${CONFDIR};fi
+-	cp ${TGT} ${BINDIR}/${TGT}
+-	${BINDIR}/${TGT} -C -c /tmp/no-ip2.conf
+-	mv /tmp/no-ip2.conf ${CONFDIR}/no-ip2.conf
++	if [ ! -d ${DESTDIR}${BINDIR} ]; then mkdir -p ${DESTDIR}${BINDIR};fi
++	if [ ! -d ${DESTDIR}${CONFDIR} ]; then mkdir -p ${DESTDIR}${CONFDIR};fi
++	cp ${TGT} ${DESTDIR}${BINDIR}/${TGT}
+ 
+ package: ${TGT}
+ 	rm  -f *.bak

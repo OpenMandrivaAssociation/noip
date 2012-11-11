@@ -1,0 +1,17 @@
+diff -Naur noip-2.1.9/noip2.c noip-2.1.9.tpg/noip2.c
+--- noip-2.1.9/noip2.c	2008-11-21 22:19:54.000000000 +0000
++++ noip-2.1.9.tpg/noip2.c	2008-11-25 21:59:27.000000000 +0000
+@@ -235,8 +235,11 @@
+ #ifndef PREFIX
+   #define PREFIX		"/usr/local"
+ #endif
+-#define CONFIG_FILEPATH		PREFIX"/etc"
+-#define CONFIG_FILENAME		PREFIX"/etc/no-ip2.conf"
++#ifndef CONFDIR
++  #define CONFDIR		"/etc"
++#endif
++#define CONFIG_FILEPATH		CONFDIR
++#define CONFIG_FILENAME		CONFDIR"/noip.conf"
+ #define CONFSTRLEN		1024
+ #define MAX_DEVLEN		16
+ #define MAX_INSTANCE		4

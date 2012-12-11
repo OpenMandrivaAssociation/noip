@@ -79,3 +79,71 @@ echo
 %attr(755,root,root) %{_sbindir}/*
 %attr(744,root,root) %{_initrddir}/%{name}
 %ghost %{_sysconfdir}/%{name}.conf
+
+
+%changelog
+* Sun Oct 02 2011 Tomasz Pawel Gajc <tpg@mandriva.org> 2.1.9-5mdv2012.0
++ Revision: 702407
+- use %%serverbuild_hardened flags for mdv2012
+
+* Mon Sep 12 2011 Tomasz Pawel Gajc <tpg@mandriva.org> 2.1.9-4
++ Revision: 699580
+- enable %%serverbuild and pass ldflags
+
+* Sat Dec 11 2010 Oden Eriksson <oeriksson@mandriva.com> 2.1.9-3mdv2011.0
++ Revision: 620505
+- the mass rebuild of 2010.0 packages
+
+* Mon Sep 14 2009 Tomasz Pawel Gajc <tpg@mandriva.org> 2.1.9-2mdv2010.0
++ Revision: 440531
+- use Werror_cflags
+
+  + Thierry Vignaud <tv@mandriva.org>
+    - rebuild
+
+* Tue Nov 25 2008 Tomasz Pawel Gajc <tpg@mandriva.org> 2.1.9-1mdv2009.1
++ Revision: 306800
+- update to new version 2.1.9
+- rewrite patch 0 and 1
+
+* Sun Sep 14 2008 Tomasz Pawel Gajc <tpg@mandriva.org> 2.1.7-4mdv2009.0
++ Revision: 284710
+- rebuild
+
+* Tue Jul 29 2008 Thierry Vignaud <tv@mandriva.org> 2.1.7-3mdv2009.0
++ Revision: 254058
+- rebuild
+- kill re-definition of %%buildroot on Pixel's request
+
+  + Olivier Blin <blino@mandriva.org>
+    - restore BuildRoot
+
+* Fri Sep 14 2007 Tomasz Pawel Gajc <tpg@mandriva.org> 2.1.7-1mdv2008.1
++ Revision: 85688
+- new version
+
+* Sun Jul 08 2007 Tomasz Pawel Gajc <tpg@mandriva.org> 2.1.4-1mdv2008.0
++ Revision: 49806
+- bzip source
+- new version
+- fix mixture of tabs and spaces
+
+
+* Mon Jan 22 2007 Tomasz Pawel Gajc <tpg@mandriva.org> 2.1.3-4mdv2007.0
++ Revision: 111884
+- fix config path
+
+* Sat Jan 20 2007 Tomasz Pawel Gajc <tpg@mandriva.org> 2.1.3-3mdv2007.1
++ Revision: 111083
+- bump release tag
+- correct chmod bits on initscript
+
+* Thu Jan 18 2007 Tomasz Pawel Gajc <tpg@mandriva.org> 2.1.3-2mdv2007.1
++ Revision: 110380
+- fix post scriplet
+- minor fixes, cleans
+
+* Thu Jan 18 2007 Tomasz Pawel Gajc <tpg@mandriva.org> 2.1.3-1mdv2007.1
++ Revision: 110221
+- Import noip
+

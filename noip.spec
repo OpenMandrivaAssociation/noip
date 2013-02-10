@@ -1,7 +1,7 @@
 Summary:	Linux client for the no-ip.com dynamic DNS service
 Name:		noip
 Version:	2.1.9
-Release:	%mkrel 5
+Release:	6
 License:	GPLv2+
 Group:		Networking/Other
 URL:		http://www.no-ip.com
@@ -11,7 +11,6 @@ Patch0:		%{name}-2.1.9-makefile.patch
 Patch1:		%{name}-2.1.9-config-path.patch
 Requires(pre):	rpm-helper
 Requires(post):	rpm-helper
-BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 
 %description
 This is the No-IP.com Dynamic DNS update client page.
@@ -43,8 +42,6 @@ export LDFLAGS="%{ldflags}"
 %make PREFIX="%{_prefix}" BINDIR="%{_sbindir}" CONFDIR="%{_sysconfdir}"
 
 %install
-[ "%{buildroot}" != "/" ] && rm -rf %{buildroot}
-
 %makeinstall_std PREFIX=%{_prefix} CONFDIR="%{_sysconfdir}" BINDIR="%{_sbindir}"
 
 touch %{buildroot}%{_sysconfdir}/%{name}.conf
@@ -70,11 +67,7 @@ echo
 %preun
 %_preun_service %{name}
 
-%clean
-[ "%{buildroot}" != "/" ] && rm -rf %{buildroot}
-
 %files
-%defattr(644,root,root,755)
 %doc README.FIRST README.urpmi
 %attr(755,root,root) %{_sbindir}/*
 %attr(744,root,root) %{_initrddir}/%{name}

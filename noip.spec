@@ -37,8 +37,6 @@ mv -f %{name}2.c %{name}.c
 %serverbuild
 %endif
 
-export LDFLAGS="%{ldflags}"
-
 %make PREFIX="%{_prefix}" BINDIR="%{_sbindir}" CONFDIR="%{_sysconfdir}"
 
 %install

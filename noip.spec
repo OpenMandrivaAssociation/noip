@@ -1,7 +1,7 @@
 Summary:	Linux client for the no-ip.com dynamic DNS service
 Name:		noip
 Version:	2.1.9
-Release:	6
+Release:	7
 License:	GPLv2+
 Group:		Networking/Other
 URL:		http://www.no-ip.com

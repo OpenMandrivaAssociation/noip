@@ -1,0 +1,2 @@
+g noip - -
+u noip - "No-ip daemon user" /var/run/noip /sbin/nologin

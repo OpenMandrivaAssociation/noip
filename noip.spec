@@ -4,7 +4,7 @@ Version:	2.1.9
 Release:	9
 License:	GPLv2+
 Group:		Networking/Other
-URL:		http://www.no-ip.com
+URL:		https://www.no-ip.com
 Source0:	http://www.no-ip.com/client/linux/noip-duc-linux.tar.gz
 Source1:	%{name}.service
 Source2:	%{name}.sysusers

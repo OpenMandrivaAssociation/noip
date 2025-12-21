@@ -9,6 +9,7 @@ Source0:	http://www.no-ip.com/client/linux/noip-duc-linux.tar.gz
 Source1:	%{name}.service
 Source2:	%{name}.sysusers
 Patch0:		%{name}.patch
+BuildRequires:	make
 BuildRequires:	systemd-rpm-macros
 %systemd_requires
 

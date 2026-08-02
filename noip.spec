@@ -1,7 +1,7 @@
 Summary:	Linux client for the no-ip.com dynamic DNS service
 Name:		noip
-Version:	2.1.9
-Release:	9
+Version:	3.3.0
+Release:	1
 License:	GPLv2+
 Group:		Networking/Other
 URL:		https://www.no-ip.com
@@ -25,7 +25,8 @@ NOTE: You must add hostnames on the website (http://www.no-ip.com)
 first before you can have the updater update them.
 
 %prep
-%autosetup -n %{name}-%{version}-1 -p1
+# Upstream tarball still ships as noip-2.1.9-1 (Source0 URL unchanged; 3.x uses a different distribution).
+%autosetup -n %{name}-2.1.9-1 -p1
 
 %build
 %define Werror_cflags %{nil}

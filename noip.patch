@@ -1,6 +1,5 @@
-diff -up noip-2.1.9/Makefile.orig noip-2.1.9/Makefile
---- noip-2.1.9/Makefile.orig	2008-11-22 00:27:15.000000000 +0200
-+++ noip-2.1.9/Makefile	2009-03-14 01:56:38.000000000 +0200
+--- noip-2.1.9-1/Makefile	2008-11-25 20:41:16.000000000 +0100
++++ noip-2.1.9-1/Makefile	2026-08-02 23:47:43.933350249 +0200
 @@ -3,8 +3,8 @@ CC=gcc
  PKG=noip-2.1.tgz
  
@@ -21,10 +20,9 @@ diff -up noip-2.1.9/Makefile.orig noip-2.1.9/Makefile
  
  install: ${TGT} 
  	if [ ! -d ${BINDIR} ]; then mkdir -p ${BINDIR};fi
-diff -up noip-2.1.9/noip2.c.orig noip-2.1.9/noip2.c
---- noip-2.1.9/noip2.c.orig	2008-11-22 00:19:54.000000000 +0200
-+++ noip-2.1.9/noip2.c	2009-03-14 01:56:38.000000000 +0200
-@@ -232,11 +232,8 @@
+--- noip-2.1.9-1/noip2.c	2008-11-25 20:50:09.000000000 +0100
++++ noip-2.1.9-1/noip2.c	2026-08-02 23:47:43.949910488 +0200
+@@ -239,11 +239,8 @@
  #define HOST			1
  #define GROUP			2
  #define DOMAIN			3
@@ -38,9 +36,8 @@ diff -up noip-2.1.9/noip2.c.orig noip-2.1.9/noip2.c
  #define CONFSTRLEN		1024
  #define MAX_DEVLEN		16
  #define MAX_INSTANCE		4
-diff -up noip-2.1.9/redhat.noip.sh.orig noip-2.1.9/redhat.noip.sh
---- noip-2.1.9/redhat.noip.sh.orig	2003-07-28 13:47:03.000000000 +0300
-+++ noip-2.1.9/redhat.noip.sh	2009-03-14 01:58:24.000000000 +0200
+--- noip-2.1.9-1/redhat.noip.sh	2003-07-28 12:47:03.000000000 +0200
++++ noip-2.1.9-1/redhat.noip.sh	2026-08-02 23:47:43.953580597 +0200
 @@ -1,76 +1,105 @@
  #!/bin/sh
  #
